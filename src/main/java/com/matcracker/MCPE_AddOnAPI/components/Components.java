@@ -1,8 +1,9 @@
-package com.matcracker.MCPE_AddOnAPI.entities;
+package com.matcracker.MCPE_AddOnAPI.components;
 
 public class Components {
 	public enum ComponentsType{
 		IDENTIFIER,
+		PROJECTILE,
 		NAMEABLE,
 		TYPE_FAMILY,
 		COLLOSION_BOX,

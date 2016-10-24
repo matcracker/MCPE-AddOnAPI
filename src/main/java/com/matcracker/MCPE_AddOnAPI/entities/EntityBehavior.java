@@ -1,6 +1,6 @@
 package com.matcracker.MCPE_AddOnAPI.entities;
 
-import com.matcracker.MCPE_AddOnAPI.entities.Components.BehaviourType;
+import com.matcracker.MCPE_AddOnAPI.components.Components.BehaviourType;
 
 public class EntityBehavior {
 	private BehaviourType type;

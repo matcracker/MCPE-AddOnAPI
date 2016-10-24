@@ -1,6 +1,6 @@
 package com.matcracker.MCPE_AddOnAPI.entities;
 
-public class EntityComponents{
+public class Entity{
 	/*
 	 * @TODO List
 	 * - Check almost all "set" method if can be > 0
@@ -17,11 +17,11 @@ public class EntityComponents{
 	
 	private int damage;
 	
-	public EntityComponents(EntityType type){
+	public Entity(EntityType type){
 		this.type = type;
 	}
 	
-	public EntityComponents(EntityType type, float health, float maxHealth, float height, float width){
+	public Entity(EntityType type, float health, float maxHealth, float height, float width){
 		this.type = type;
 		this.health = health;
 		this.maxHealth = maxHealth;
@@ -29,8 +29,35 @@ public class EntityComponents{
 		this.width = width;
 	}
 	
+	private EntityAge ageable = new EntityAge(this);
+	private EntityBreed breedable = new EntityBreed(this);
+	private EntityProjectile projectile = new EntityProjectile(this);
+	
+	public EntityAge getAgeable(){
+		return ageable;
+	}
+	
+	public EntityBreed getBreedable(){
+		return breedable;
+	}
+	
+	public EntityProjectile getProjectile(){
+		if(isProjectile())
+			return projectile;
+		
+		return null;
+	}
+	
+	public void setType(EntityType type){
+		this.type = type;
+	}
+	
+	public EntityType getType(){
+		return type;
+	}
+	
 	public String getIdentifier(){
-		return "minecraft:" + type.toString().toLowerCase();
+		return type.getIdentifier();
 	}
 	
 	public void setMaxHealth(float maxHealth){
@@ -92,7 +119,7 @@ public class EntityComponents{
 	public boolean isProjectile(){
 		switch(type){
 			case ARROW:
-			case FIREBALL_LARGE:
+			case FIREBALL:
 			case FIREBALL_SMALL:
 				return true;
 			default:
