@@ -1,4 +1,4 @@
-package com.matcracker.MCPE_AddOnAPI;
+package com.matcracker.MCPE_AddOnAPI.entities;
 
 public class Components {
 	public enum ComponentsType{
@@ -11,12 +11,20 @@ public class Components {
 		ATTACK,
 		EQUIPMENT,
 		FOLLOWRANGE,
+		TELEPORT,
 		TARGET_NEARBY_SENSOR
 	}
 	
 	public enum BehaviourType{
 		FLOAT,
 		MELEE_ATTACK,
+		PANIC,
+		MOUNT_PATHING,
+		BREED,
+		TEMPT,
+		FOLLOW_PARENT,
+		RANDOM_STROLL,
+		LOOK_AT_PLAYER,
 		NEAREST_ATTACKABLE_TARGET,
 		RANDOM_LOOK_AROUND
 		

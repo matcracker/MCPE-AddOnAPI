@@ -1,9 +1,7 @@
-package com.matcracker.MCPE_AddOnAPI;
+package com.matcracker.MCPE_AddOnAPI.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.matcracker.MCPE_AddOnAPI.EntityComponents.EntityType;
 
 public class EntityFamily{
 	
@@ -29,7 +27,12 @@ public class EntityFamily{
 		if(isUndead())
 			return true;
 		
-		return false;
+		switch(type){
+			case CREEPER:
+				return true;
+			default:
+				return false;
+		}
 	}
 	
 	public boolean isBad(){

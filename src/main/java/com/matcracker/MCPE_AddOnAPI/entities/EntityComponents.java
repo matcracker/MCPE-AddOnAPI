@@ -1,4 +1,4 @@
-package com.matcracker.MCPE_AddOnAPI;
+package com.matcracker.MCPE_AddOnAPI.entities;
 
 public class EntityComponents{
 	/*
@@ -12,6 +12,8 @@ public class EntityComponents{
 	private float maxHealth = 20F;
 	private float height = 2F;
 	private float width = 1F;
+	private float movement = 0.25F;
+	private float maxMovement = 0.5F;
 	
 	private int damage;
 	
@@ -27,19 +29,7 @@ public class EntityComponents{
 		this.width = width;
 	}
 	
-	//@TODO Sort in alphabetical order when all entities type are added
-	public enum EntityType{
-		ARROW,
-		SKELETON,
-		ZOMBIE,
-		FIREBALL_LARGE,
-		FIREBALL_SMALL,
-		ZOMBIE_PIGMAN,
-		HUSK,
-		GHAST
-	}
-		
-	public String getEntityID(){
+	public String getIdentifier(){
 		return "minecraft:" + type.toString().toLowerCase();
 	}
 	
@@ -73,6 +63,22 @@ public class EntityComponents{
 	
 	public float getWidth(){
 		return width;
+	}
+	
+	public void setMovement(float movement){
+		this.movement = movement;
+	}
+	
+	public float getMovement(){
+		return movement;
+	}
+	
+	public void setMaxMovement(float maxMovement){
+		this.maxMovement = maxMovement;
+	}
+	
+	public float getMaxMovement(){
+		return maxMovement;
 	}
 	
 	public void setDamage(int damage){
