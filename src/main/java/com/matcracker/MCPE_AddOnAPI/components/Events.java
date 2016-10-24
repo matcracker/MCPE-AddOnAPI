@@ -7,6 +7,5 @@ public enum Events {
 	ENTITY_BORN,
 	ENTITY_TRASFORMED,
 	AGEABLE_GROW_UP,
-	
-	
+
 }

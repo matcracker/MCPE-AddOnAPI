@@ -8,39 +8,39 @@ public class EntityBehavior {
 	private float speedMultiplier = 1F;
 	private float targetDistance = 0;
 	private boolean trackTarget = false;
-	
+
 	private float lookDistance = 4F;
-	
-	public EntityBehavior(BehaviourType type){
+
+	public EntityBehavior(BehaviourType type) {
 		this.type = type;
 	}
-	
-	public EntityBehavior(BehaviourType type, int priority, float speedMultiplier){
+
+	public EntityBehavior(BehaviourType type, int priority, float speedMultiplier) {
 		this.type = type;
 		this.priority = priority;
 		this.setSpeedMultiplier(speedMultiplier);
 	}
-	
-	public void setType(BehaviourType type){
+
+	public void setType(BehaviourType type) {
 		this.type = type;
 	}
-	
-	public BehaviourType getType(){
+
+	public BehaviourType getType() {
 		return type;
 	}
-	
-	public void setPriority(int priority){
+
+	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	
-	public int getPriority(){
+
+	public int getPriority() {
 		return priority;
 	}
-	
+
 	public void setSpeedMultiplier(float speedMultiplier) {
 		this.speedMultiplier = speedMultiplier;
 	}
-	
+
 	public float getSpeedMultiplier() {
 		return speedMultiplier;
 	}
@@ -53,32 +53,28 @@ public class EntityBehavior {
 		this.targetDistance = targetDistance;
 	}
 
-	public boolean isTrackingTarget(){
+	public boolean isTrackingTarget() {
 		return trackTarget;
 	}
 
 	public void setTrackTarget(boolean trackTarget) {
-		switch(type){
+		switch (type) {
 			case MELEE_ATTACK:
 			case MOUNT_PATHING:
 				this.trackTarget = trackTarget;
 			default:
 				break;
 		}
-			
+
 	}
-	
+
 	public float getLookDistance() {
 		return lookDistance;
 	}
 
 	public void setLookDistance(float lookDistance) {
-		if(type == BehaviourType.LOOK_AT_PLAYER)
+		if (type == BehaviourType.LOOK_AT_PLAYER)
 			this.lookDistance = lookDistance;
 	}
 
-
-	
-	
-	
 }

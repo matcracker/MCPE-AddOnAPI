@@ -1,23 +1,17 @@
 package com.matcracker.MCPE_AddOnAPI.entities;
 
 public class EntityProjectile {
-	EntityType type;
 	
-	private Entity entity;
+	private EntityType type;
 	private boolean knockback = true;
 	private int damage = 1;
 	private float power = 1F;
 	private float gravity = 0.05F;
 	private int anchor = 1;
 	private float[] offset;
-	
-	public EntityProjectile(Entity entity){
-		this.entity = entity;
-		this.type = entity.getType();
-	}
-	
-	public Entity getEntity(){
-		return entity;
+
+	public EntityProjectile(EntityType type) {
+		this.setType(type);
 	}
 
 	public int getDamage() {
@@ -67,5 +61,13 @@ public class EntityProjectile {
 	public void setAnchor(int anchor) {
 		this.anchor = anchor;
 	}
-	
+
+	public EntityType getType() {
+		return type;
+	}
+
+	public void setType(EntityType type) {
+		this.type = type;
+	}
+
 }

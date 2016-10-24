@@ -1,17 +1,12 @@
 package com.matcracker.MCPE_AddOnAPI.entities;
 
-public class EntityBreed{
-	
-	private Entity entity;
-	private boolean requireTame = false;
+public class EntityBreedable extends Entity {
+
+	private boolean requireTame;
 	private String[] breedItems;
-	
-	public EntityBreed(Entity entity) {
-		this.entity = entity;
-	}
-	
-	public Entity getEntity(){
-		return entity;
+
+	public EntityBreedable(EntityType entity) {
+		super(entity);
 	}
 
 	public boolean isRequiredTame() {

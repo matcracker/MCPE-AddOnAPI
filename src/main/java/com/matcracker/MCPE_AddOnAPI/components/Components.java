@@ -1,7 +1,7 @@
 package com.matcracker.MCPE_AddOnAPI.components;
 
 public class Components {
-	public enum ComponentsType{
+	public enum ComponentsType {
 		IDENTIFIER,
 		PROJECTILE,
 		NAMEABLE,
@@ -15,8 +15,8 @@ public class Components {
 		TELEPORT,
 		TARGET_NEARBY_SENSOR
 	}
-	
-	public enum BehaviourType{
+
+	public enum BehaviourType {
 		FLOAT,
 		MELEE_ATTACK,
 		PANIC,
@@ -28,11 +28,10 @@ public class Components {
 		LOOK_AT_PLAYER,
 		NEAREST_ATTACKABLE_TARGET,
 		RANDOM_LOOK_AROUND
-		
+
 	}
-	
-	public enum ComponentsGroupsType{
-		FAST,
-		SLOW
+
+	public enum ComponentsGroupsType {
+		FAST, SLOW
 	}
 }

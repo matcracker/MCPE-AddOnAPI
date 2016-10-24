@@ -3,16 +3,16 @@ package com.matcracker.MCPE_AddOnAPI.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntityFamily{
-	
+public class EntityFamily {
+
 	private EntityType type;
 
-	public EntityFamily(EntityType type){
+	public EntityFamily(EntityType type) {
 		this.type = type;
 	}
-	
-	public boolean isUndead(){
-		switch(this.type){
+
+	public boolean isUndead() {
+		switch (this.type) {
 			case ZOMBIE:
 			case ZOMBIE_PIGMAN:
 			case HUSK:
@@ -22,35 +22,35 @@ public class EntityFamily{
 				return false;
 		}
 	}
-	
-	public boolean isMonster(){
-		if(isUndead())
+
+	public boolean isMonster() {
+		if (isUndead())
 			return true;
-		
-		switch(type){
+
+		switch (type) {
 			case CREEPER:
 				return true;
 			default:
 				return false;
 		}
 	}
-	
-	public boolean isBad(){
-		if(isMonster())
+
+	public boolean isBad() {
+		if (isMonster())
 			return true;
-		
-		switch(type){
-			//add more monster
+
+		switch (type) {
+			// add more monster
 			case GHAST:
 				return true;
 			default:
 				return false;
 		}
 	}
-	
-	public String[] getFamily(){
+
+	public String[] getFamilyNames() {
 		List<String> family = new ArrayList<String>();
-		
+
 		family.add(type.toString().toLowerCase());
 		if(isUndead())
 			family.add("undead");
@@ -58,10 +58,10 @@ public class EntityFamily{
 			family.add("monster");
 		if(isBad())
 			family.add("bad");
-		
+
 		String[] famArray = new String[family.size()];
 		famArray = family.toArray(famArray);
-		
+
 		return famArray;
 	}
 }
