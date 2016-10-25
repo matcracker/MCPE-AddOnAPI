@@ -1,5 +1,5 @@
 package com.matcracker.MCPE_AddOnAPI.entities;
 
-public class EntityRideable {
+public interface Ambient extends LivingEntity{
 
 }
